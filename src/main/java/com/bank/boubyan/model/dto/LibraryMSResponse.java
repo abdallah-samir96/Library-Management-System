@@ -38,7 +38,7 @@ public class LibraryMSResponse <T>{
             return this;
         }
 
-        public Builder<T> data(String moreDetails) {
+        public Builder<T> moreDetails(String moreDetails) {
             this.moreDetails = moreDetails;
             return this;
         }
