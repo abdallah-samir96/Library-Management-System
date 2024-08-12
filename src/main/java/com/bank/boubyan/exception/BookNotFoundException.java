@@ -1,7 +1,5 @@
 package com.bank.boubyan.exception;
 
-import org.springframework.http.HttpStatus;
-
 public class BookNotFoundException extends RuntimeException{
     private int status;
     public BookNotFoundException(String message) {
