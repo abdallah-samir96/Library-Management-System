@@ -1,13 +1,12 @@
-package com.bank.boubyan.Library_Management_System;
+package com.bank.boubyan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class LibraryManagementSystemApplication {
+    public static void main(String [] args) {
 
-	public static void main(String[] args) {
-		SpringApplication.run(LibraryManagementSystemApplication.class, args);
-	}
-
+        SpringApplication.run(LibraryManagementSystemApplication.class);
+    }
 }
