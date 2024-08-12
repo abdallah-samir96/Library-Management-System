@@ -1,4 +1,4 @@
-package com.bank.boubyan.model;
+package com.bank.boubyan.model.domain;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -11,7 +11,6 @@ import java.time.ZonedDateTime;
 @Table(name = "book")
 @Entity
 public class Book {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,6 +1,6 @@
 package com.bank.boubyan.repository;
 
-import com.bank.boubyan.model.Book;
+import com.bank.boubyan.model.domain.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
