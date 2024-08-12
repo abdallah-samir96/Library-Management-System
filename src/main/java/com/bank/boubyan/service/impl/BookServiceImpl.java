@@ -6,23 +6,52 @@ import com.bank.boubyan.model.mapper.BookMapper;
 import com.bank.boubyan.repository.BookRepository;
 import com.bank.boubyan.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.logging.Logger;
 
 @Service
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
+    private final BookMapper bookMapper;
 
     @Autowired
-    public BookServiceImpl(BookRepository bookRepository) {
+    public BookServiceImpl(BookRepository bookRepository, BookMapper mapper) {
         this.bookRepository = bookRepository;
+        this.bookMapper = mapper;
     }
     @Override
     public BookDTO getById(Long id) {
         var bookOptional = bookRepository.findById(id);
         if(bookOptional.isPresent()) {
-            return new BookMapper().toDTO(bookOptional.get());
+            return bookMapper.toDTO(bookOptional.get());
         }
         throw new BookNotFoundException("Book With Id = " + id + " Is Not Found!!", HttpStatus.NOT_FOUND.value());
+    }
+    @Override
+    public List<BookDTO> getAll(Long offset, Long limit) {
+        var pageable = PageRequest.of((int)(offset/ limit), limit.intValue());
+        var result = bookRepository.findAll(pageable);
+        return bookMapper.toDTO(result.stream().toList());
+    }
+    @Override
+    public Long count() {
+        return bookRepository.count();
+    }
+    @Override
+    public void create(BookDTO bookDTO) {
+        var book = bookMapper.toEntity(bookDTO);
+        bookRepository.save(book);
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        // this call used to validate existing of the Book
+        var book = getById(id);
+        Logger.getLogger(this.getClass().getName()).info(book.toString());
+        bookRepository.deleteById(id);
     }
 }

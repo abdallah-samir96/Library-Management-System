@@ -3,7 +3,9 @@ package com.bank.boubyan.model.mapper;
 import com.bank.boubyan.model.domain.Book;
 import com.bank.boubyan.model.domain.BookDomain;
 import com.bank.boubyan.model.dto.BookDTO;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BookMapper implements Mapper<Book, BookDTO> {
     @Override
     public Book toEntity(BookDTO dto) {

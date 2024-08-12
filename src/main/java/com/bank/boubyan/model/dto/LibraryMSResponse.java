@@ -1,10 +1,18 @@
 package com.bank.boubyan.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+/**
+ * Representing he Library Management System Base Response
+ * @author abdallahsameer22@gmail.com
+ * @since 2024-08-12
+ **/
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class LibraryMSResponse <T>{
     private final T data;
-    private final long offset;
-    private final long limit;
-    private final long totalCount;
+    private final Long offset;
+    private final Long limit;
+    private final Long totalCount;
     private final String moreDetails;
     public LibraryMSResponse(Builder<T> builder) {
         this.data = builder.data;
@@ -16,20 +24,20 @@ public class LibraryMSResponse <T>{
 
     public static class Builder<T>{
         private T data;
-        private long offset;
-        private long limit;
-        private long totalCount;
+        private Long offset;
+        private Long limit;
+        private Long totalCount;
         private String moreDetails;
 
-        public Builder<T> offset(long offset) {
+        public Builder<T> offset(Long offset) {
             this.offset = offset;
             return this;
         }
-        public Builder<T> limit(long limit) {
+        public Builder<T> limit(Long limit) {
             this.limit = limit;
             return this;
         }
-        public Builder<T> totalCount(long totalCount) {
+        public Builder<T> totalCount(Long totalCount) {
             this.totalCount = totalCount;
             return this;
         }
@@ -43,7 +51,7 @@ public class LibraryMSResponse <T>{
             return this;
         }
         public LibraryMSResponse<T> build(){
-            return new LibraryMSResponse<T>(this);
+            return new LibraryMSResponse<>(this);
         }
     }
 
@@ -51,14 +59,14 @@ public class LibraryMSResponse <T>{
         return data;
     }
 
-    public long getOffset() {
+    public Long getOffset() {
         return offset;
     }
 
-    public long getLimit() {
+    public Long getLimit() {
         return limit;
     }
-    public long getTotalCount() {
+    public Long getTotalCount() {
         return totalCount;
     }
     public String getMoreDetails() {
