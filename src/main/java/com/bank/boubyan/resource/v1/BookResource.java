@@ -53,5 +53,8 @@ public class BookResource {
     public void deleteById(@PathVariable("id") Long id) {
         bookService.deleteById(id);
     }
-
+    @PutMapping("/update")
+    public void update(@RequestBody @Valid BookDTO bookDTO) {
+        bookService.update(bookDTO);
+    }
 }

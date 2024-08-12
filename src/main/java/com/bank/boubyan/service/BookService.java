@@ -10,4 +10,5 @@ public interface BookService {
     Long count();
     void create(BookDTO bookDTO);
     void deleteById(Long id);
+    void update(BookDTO bookDTO);
 }

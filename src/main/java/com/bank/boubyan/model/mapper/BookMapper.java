@@ -36,4 +36,13 @@ public class BookMapper implements Mapper<Book, BookDTO> {
         bookDTO.setUpdatedBy(bookDTO.getUpdatedBy());
         return bookDTO;
     }
+    public void toEntity(Book book, BookDTO dto) {
+        book.setAuthor(dto.getAuthor());
+        book.setTitle(dto.getTitle());
+        book.setPagesCount(dto.getPagesCount());
+        book.setDescription(dto.getDescription() != null? dto.getDescription(): book.getDescription());
+        book.setDomain(dto.getDomain() != null ? dto.getDomain(): book.getDomain());
+        book.setPublisher((dto.getPublisher()!= null)? dto.getPublisher() : book.getPublisher());
+        book.setPrintingNumber(dto.getPrintingNumber()!= null? dto.getPrintingNumber(): book.getPrintingNumber());
+    }
 }
