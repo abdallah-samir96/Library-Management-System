@@ -1,6 +1,5 @@
 package com.bank.boubyan.resource.v1;
 
-import com.bank.boubyan.model.domain.Book;
 import com.bank.boubyan.model.dto.BookDTO;
 import com.bank.boubyan.model.dto.LibraryMSResponse;
 import com.bank.boubyan.service.BookService;

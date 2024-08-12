@@ -6,6 +6,7 @@ import com.bank.boubyan.model.mapper.BookMapper;
 import com.bank.boubyan.repository.BookRepository;
 import com.bank.boubyan.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,6 +23,6 @@ public class BookServiceImpl implements BookService {
         if(bookOptional.isPresent()) {
             return new BookMapper().toDTO(bookOptional.get());
         }
-        throw new BookNotFoundException("Book With Id = " + id + " Is Not Found!!");
+        throw new BookNotFoundException("Book With Id = " + id + " Is Not Found!!", HttpStatus.NOT_FOUND.value());
     }
 }
