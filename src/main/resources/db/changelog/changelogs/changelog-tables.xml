@@ -14,5 +14,9 @@
         <comment>This is used to create book Table into the DB</comment>
         <sqlFile path="./tables/initial-tables-002.sql" splitStatements="true" relativeToChangelogFile="true"/>
     </changeSet>
+    <changeSet id="003" author="abdallahsameer22@gmail.com">
+        <comment>This is used to create book Table into the DB</comment>
+        <sqlFile path="./tables/initial-tables-003.sql" splitStatements="true" relativeToChangelogFile="true"/>
+    </changeSet>
 
 </databaseChangeLog>
