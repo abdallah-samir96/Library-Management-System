@@ -11,6 +11,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
@@ -43,8 +44,8 @@ public class JWTAuthFilter extends OncePerRequestFilter {
              var usernamePasswordAuth =
                      new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
              // we need to add something
+             usernamePasswordAuth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
              SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuth);
-             filterChain.doFilter(request, response);
             }
         }
         filterChain.doFilter(request, response);
