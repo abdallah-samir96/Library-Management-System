@@ -65,6 +65,12 @@ After Running the Application we can use this CURL
 --header 'Accept: */*' \
 --header 'Cookie: JSESSIONID=873693D000221D656826AC111757D5EF'
 
+After Running the API, Getting Json file, Import it to **swagger Editor** to see the APIS Like
+
+![Alt text](src/main/resources/static/swaggerDocs.png)
+
+---
+
 - Try
 `mvn clean test` to run the unit testing 
 
