@@ -34,7 +34,7 @@ Building a Library Management system where users can
 ### 🛠 Work With Maven(software project management)
 
 ---
-*Configure the pom.xml file
+* Configure the pom.xml file
 * Deploy the application using maven with spring-boot plugin and tomcat web container.
 
 for generating the jar file and running all test cases we can use this command
