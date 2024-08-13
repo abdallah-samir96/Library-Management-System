@@ -1,7 +1,8 @@
 # Library Management System
 
-## Description
+### **POC Description**
 
+-----
 Building a Library Management system where users can
 - **Create Book.**
 - **View All Books.**
@@ -9,11 +10,13 @@ Building a Library Management system where users can
 - **Delete book if exists.**
 - **Update Book.**
 
-## Documentation For RESTful Api Usage (Resources and Endpoints)
+### Documentation For RESTful Api Usage (Resources and Endpoints)
 
 📧 https://documenter.getpostman.com/view/28448487/2sA3kVkgZd
 
-# ⚙ Technologies Used ⚙
+### ⚙ Used Technologies ⚙
+
+---
 * Java version 17 from (**Eclipse Adoptium**)
 * Spring Boot Version (3.3.2)
 * Spring Data JPA
@@ -28,8 +31,10 @@ Building a Library Management system where users can
 * JWT tokens
 * Swagger Documenation as OpenAPI
 
-# 🛠 Work With Maven(software project management)
-* Configure the pom.xml file
+### 🛠 Work With Maven(software project management)
+
+---
+*Configure the pom.xml file
 * Deploy the application using maven with spring-boot plugin and tomcat web container.
 
 for generating the jar file and running all test cases we can use this command
@@ -40,13 +45,16 @@ and deploy it automatically into Tomcat Web server.
 
 
 
-*Postgresql*
+### Postgresql DataBase
+
+---
 * Adding the configuration of datasource into the application.properties file (connection String, username, password, Driver)
 * Adding Liquibase Configuration to apply the changesets when the application starts.
 
 
 *To Generate The swagger documentation file as json we can use this **curl***
 
+After Running the Application we can use this CURL
 >curl --location 'http://localhost:8090/library/docs' \
 --header 'Accept: */*' \
 --header 'Cookie: JSESSIONID=873693D000221D656826AC111757D5EF'
