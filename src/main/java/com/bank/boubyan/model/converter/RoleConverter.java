@@ -1,4 +1,4 @@
-package com.bank.boubyan.model;
+package com.bank.boubyan.model.converter;
 
 import com.bank.boubyan.model.domain.Role;
 import com.fasterxml.jackson.core.JsonProcessingException;

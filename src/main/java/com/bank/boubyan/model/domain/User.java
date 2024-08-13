@@ -1,12 +1,11 @@
 package com.bank.boubyan.model.domain;
 
-import com.bank.boubyan.model.RoleConverter;
+import com.bank.boubyan.model.converter.RoleConverter;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,8 +25,6 @@ public class User implements UserDetails {
     private String email;
     @Column(name = "password")
     private String password;
-    @Column(name = "birth_date")
-    private LocalDateTime dateOfBirth;
     @Column(name = "address")
     private String address;
     @Column(name = "job_title")
@@ -109,15 +106,6 @@ public class User implements UserDetails {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public LocalDateTime getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDateTime dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
     public String getAddress() {
         return address;
     }
