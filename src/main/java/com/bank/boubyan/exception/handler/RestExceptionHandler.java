@@ -1,6 +1,7 @@
 package com.bank.boubyan.exception.handler;
 
 import com.bank.boubyan.exception.BookNotFoundException;
+import com.bank.boubyan.exception.UserNotFoundException;
 import com.bank.boubyan.model.dto.ErrorCodes;
 import com.bank.boubyan.model.dto.ErrorDTO;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,6 +19,18 @@ public class RestExceptionHandler {
         var errorDTO = new ErrorDTO(
                 exception.getMessage(),
                 ErrorCodes.BOOK_NOT_FOUND.code,
+                request.getRequestURI(),
+                LocalDateTime.now()
+        );
+        return ResponseEntity
+                .status(exception.getStatus())
+                .body(errorDTO);
+    }
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<ErrorDTO> handleUserNotFoundException(HttpServletRequest request, UserNotFoundException exception) {
+        var errorDTO = new ErrorDTO(
+                exception.getMessage(),
+                ErrorCodes.USER_NOT_FOUND.code,
                 request.getRequestURI(),
                 LocalDateTime.now()
         );
