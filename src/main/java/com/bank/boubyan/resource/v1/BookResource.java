@@ -20,6 +20,7 @@ public class BookResource {
     public BookResource(BookService bookService) {
         this.bookService = bookService;
     }
+
     @GetMapping("/{id}")
     ResponseEntity<LibraryMSResponse<BookDTO>> getById(@PathVariable("id") Long id) {
         var data = bookService.getById(id);
