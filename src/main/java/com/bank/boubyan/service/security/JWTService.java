@@ -15,7 +15,7 @@ import java.util.Map;
 @Service
 public class JWTService {
 
-    private final static String SECRET_KEY = "8AC99E85BBDBFE56EB2CADED9D3D6";
+    private final static String SECRET_KEY = "d6dcb6ca9c96a5109f5382b2f22814d79afe1bd97c2be8167b5fb4b0e711b4ef";
 
     public String getUserEmail(String token) {
         return extractAllClaims(token).getSubject();

@@ -12,7 +12,7 @@ Building a Library Management system where users can
 
 ### Documentation For RESTful Api Usage (Resources and Endpoints)
 
-📧 https://documenter.getpostman.com/view/28448487/2sA3kVkgZd
+📧 https://documenter.getpostman.com/view/28448487/2sA3s6E9GQ#743abdf0-aedf-431b-9840-7fa89f5dff50
 
 ### ⚙ Used Technologies ⚙
 

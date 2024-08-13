@@ -19,7 +19,7 @@ public class SwaggerResource {
     public SwaggerResource(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
-    @GetMapping
+    @GetMapping("/generate")
     ResponseEntity<byte[]> generate(){
         byte[] fileContent = restTemplate.getForObject(SWAGGER_DOCS_URL, byte[].class);
         HttpHeaders headers = new HttpHeaders();
