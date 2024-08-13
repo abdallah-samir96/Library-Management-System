@@ -1,4 +1,4 @@
-package com.bank.boubyan.Library_Management_System;
+package com.bank.boubyan;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

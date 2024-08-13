@@ -26,7 +26,7 @@ public class BookResource {
         var data = bookService.getById(id);
         var response = new LibraryMSResponse.Builder<BookDTO>()
                 .data(data)
-                .moreDetails("Getting By ID," + this.getClass().getName())
+                .moreDetails("Getting By ID")
                 .build();
         return ResponseEntity.ok(response);
     }
@@ -50,7 +50,7 @@ public class BookResource {
     public void create(@RequestBody @Valid BookDTO bookDTO) {
          bookService.create(bookDTO);
     }
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public void deleteById(@PathVariable("id") Long id) {
         bookService.deleteById(id);
     }
