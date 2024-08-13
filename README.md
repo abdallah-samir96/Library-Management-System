@@ -58,7 +58,6 @@ and deploy it automatically into Tomcat Web server.
 
 [LinkedIn Account](https://www.linkedin.com/in/abdallah96)
 
-[Personal Email](abdallahsameer22@gmail.com)
 
 [HackerRank Account](https://www.hackerrank.com/profile/abdallahsameer22)
 
