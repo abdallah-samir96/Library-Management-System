@@ -6,9 +6,12 @@
 Building a Library Management system where users can
 - **Create Book.**
 - **View All Books.**
-- **Get Book Using The Id.**
+- **Get Book Using The ID.**
 - **Delete book if exists.**
 - **Update Book.**
+- **Register new User Into the System.**
+- **Login with username, password and generate JWT token.**
+- **Endpoint to Generate the Swagger Documentation as a json file.**
 
 ### Documentation For RESTful Api Usage (Resources and Endpoints)
 
@@ -21,7 +24,7 @@ Building a Library Management system where users can
 * Spring Boot Version (3.3.2)
 * Spring Data JPA
 * Apache Maven version (**3.9.3**)
-* Tomcat Server (Embeded Server)
+* Tomcat Server (Embedded Server)
 * Spring Bean Validation
 * JSON-B for Binding
 * Postman to test APIs
@@ -29,7 +32,7 @@ Building a Library Management system where users can
 * Liquibase As Database Migration Tool
 * Spring Security
 * JWT tokens
-* Swagger Documenation as OpenAPI
+* Swagger Documentation as OpenAPI
 
 ### 🛠 Work With Maven(software project management)
 
@@ -55,7 +58,7 @@ and deploy it automatically into Tomcat Web server.
 *To Generate The swagger documentation file as json we can use this **curl***
 
 After Running the Application we can use this CURL
->curl --location 'http://localhost:8090/library/docs' \
+>curl --location 'http://localhost:8090/library/docs/generate' \
 --header 'Accept: */*' \
 --header 'Cookie: JSESSIONID=873693D000221D656826AC111757D5EF'
 
