@@ -6,6 +6,7 @@ import com.bank.boubyan.service.BookService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,7 @@ public class BookResource {
                 .build();
         return ResponseEntity.ok(response);
     }
-    @GetMapping
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
     ResponseEntity<LibraryMSResponse<List<BookDTO>>> getAll(
             @RequestParam(defaultValue = "0") @Min(value = 0, message = "Offset Should be > 0") Long offset,
             @RequestParam(defaultValue = "25") @Min(value = 0, message = "Limit Should be > 0") Long limit
